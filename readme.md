@@ -1,9 +1,9 @@
-# Sistema para gerenciamento de escola de música
+# Sistema para gerenciamento de escola
 
 ## O que tem o sistema?
 - Todo desenvolvido com TDD
 - Cadastro de alunos
-- Cadastro de cedente
+- Cadastro de cedente (Emitente da cobrança)
 - Cadastro de funcionários
 - Cadastro de horários
 - Cadastro de matérias
