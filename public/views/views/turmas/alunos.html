@@ -1,0 +1,43 @@
+<h3 >
+Turmas <small>/ Cadastro / Alunos</small>
+</h3>
+<div  ng-init="getStudents()">
+	<div >
+		<div >
+			<div >
+				<form ng-submit='associateStudents(classroom)' >
+					<div >
+						<div >
+							<label >Turma</label>
+							<div >
+								<select  data-placeholder="Selecione a turma" ng-model="classroom" ng-options="classroom as classroom.name for classroom in classrooms" id="classroomClassroom" ng-change="setCheckedStudents(classroom)">
+									<option value="Selecione a turma"></option>
+								</select>
+							</div>
+						</div>
+						<div >
+							<label >Alunos / Responsável</label>
+							<div >
+								<div  ng-repeat="student in students">
+									<label >{{:: student.name }}</label>
+									<label >{{:: student.responsible }}</label>
+									<div >
+										<input  type="checkbox"  ng-model="student.checked">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div >
+							<div >
+								<div >
+									<button type="submit" class="btn purple"><i ></i> Salvar</button>
+									<button type="button" >Cancelar</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

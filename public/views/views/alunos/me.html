@@ -1,0 +1,217 @@
+<h3 >
+Alunos <small> / Meus dados</small>
+</h3>
+<div >
+	<div >
+		<div >
+			<div >
+				<form ng-submit='save(student)' >
+					<div >
+						<h3 >Informações Pessoais</h3>
+						<div >
+							<div >
+								<div >
+									<label >Nome Completo</label>
+									<div >
+										<input  maxlength="45" ng-required="true" type="text" placeholder=""  ng-model="student.name">
+									</div>
+								</div>
+								<div >
+									<label >Sexo</label>
+									<div >
+									 <input
+									    bs-switch
+									    ng-model="student.sex"
+									    type="checkbox"
+									    switch-size="100"
+									    switch-on-text="Feminino"
+									    switch-off-text="Masculino"
+									    switch-label-width="100"
+									    switch-handle-width="100"
+									    switch-inverse="true"
+									    switch-off-color="primary"
+									    switch-on-color="warning"
+									    ng-true-value="'female'"
+									    ng-false-value="'male'">
+									</div>
+								</div>
+								<div >
+									<label >Telefone</label>
+									<div >
+										<input  maxlength="11" ng-required="true" type="text" placeholder=""  ng-model="student.phone" minlength="10">
+									</div>
+								</div>
+								<div >
+									<label >Celular</label>
+									<div >
+										<input  maxlength="11" ng-required="true" type="text" placeholder=""  ng-model="student.cellphone" minlength="10">
+									</div>
+								</div>
+								<div >
+									<label >Nome do Pai</label>
+									<div >
+										<input  maxlength="45" type="text" placeholder=""  ng-model="student.father">
+									</div>
+								</div>
+								<div >
+									<label >Telefone do Pai</label>
+									<div >
+										<input  maxlength="11" type="text" placeholder=""  ng-model="student.phone_father" minlength="10">
+									</div>
+								</div>
+								<div >
+									<label >Nome da Mãe</label>
+									<div >
+										<input  maxlength="45" type="text" placeholder=""  ng-model="student.mother">
+									</div>
+								</div>
+								<div >
+									<label >Telefone da Mãe</label>
+									<div >
+										<input  maxlength="11" type="text" placeholder=""  ng-model="student.phone_mother" minlength="10">
+									</div>
+								</div>
+							</div>
+							<div >
+								<div >
+									<label >Nome do Responsável</label>
+									<div >
+										<input  maxlength="45" ng-required="true" type="text" placeholder=""  ng-model="student.responsible">
+									</div>
+								</div>
+								<div >
+									<label >CPF do Responsável</label>
+									<div >
+										<input  maxlength="14" ng-required="true" type="text" placeholder=""  ng-model="student.cpf_responsible" minlength="11">
+									</div>
+								</div>
+								<div >
+									<label >Telefone do Responsável</label>
+									<div >
+										<input  maxlength="11" ng-required="true" type="text" placeholder=""  ng-model="student.phone_responsible" minlength="10">
+									</div>
+								</div>
+								<div >
+									<label >Email</label>
+									<div >
+										<input  maxlength="255" ng-required="true" type="email" placeholder=""  ng-model="student.user.email">
+									</div>
+								</div>
+								<div >
+									<label >Usuário</label>
+									<div >
+										<input  maxlength="30" ng-required="true" type="text" placeholder=""  ng-model="student.user.username">
+									</div>
+								</div>
+								<div  ng-if="!student.id">
+									<label >Senha</label>
+									<div >
+										<input  maxlength="255" ng-required="true" type="password" placeholder=""  ng-model="student.user.password" minlength="6">
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<h3 >Endereço</h3>
+						<div >
+							<div >
+								<div >
+									<label >CEP</label>
+									<div >
+										<div >
+											<input  maxlength="9" ng-required="true" type="text"  ng-model="student.postcode" ng-change="getPostcode(student.postcode)" minlength="8">
+										</div>
+									</div>
+								</div>
+								<div >
+									<label >Endereço Residencial</label>
+									<div >
+										<div >
+											<input  maxlength="60" ng-required="true" type="text"  ng-model="student.street">
+										</div>
+									</div>
+								</div>
+								<div >
+									<label >Número</label>
+									<div >
+										<div >
+											<input  maxlength="10" ng-required="true" type="text"  ng-model="student.number" minlength="1" id="studentNumber">
+										</div>
+									</div>
+								</div>
+								<div >
+									<label >Complemento</label>
+									<div >
+										<div >
+											<input  maxlength="45" type="text"  ng-model="student.complement">
+										</div>
+									</div>
+								</div>
+							</div>
+							<div >
+								<div >
+									<label >Bairro</label>
+									<div >
+										<div >
+											<input  maxlength="45" ng-required="true" type="text"  ng-model="student.district">
+										</div>
+									</div>
+								</div>
+								<div >
+									<label >Estado</label>
+									<div >
+										<select  data-placeholder="Selecione um estado" ng-model="student.state" id="studentState" ng-change="setState(student.state)">
+											<option value=""> Selecione um estado</option>
+											<option ng-repeat="state in states" ng-selected="state.initials==student.state" ng-value="state.initials">{{state.name}}</option>
+										</select>
+									</div>
+								</div>
+								<div >
+									<label >Cidade</label>
+									<div >
+										<select  data-placeholder="Selecione uma cidade" ng-model="student.city" id="studentCity">
+											<option value="">Selecione uma cidade</option>
+											<option ng-repeat="city in cities" ng-selected="student.city==city" ng-value="city">{{city}}</option>
+										</select>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div >
+						    <div >
+						        <h3 >Financeiro</h3>
+						        <div >
+						            <label >Dia do pagamento</label>
+						            <div >
+						                <div >
+						                    <input  maxlength="2" ng-required="true" type="text"  ng-model="student.day_of_payment">
+						                </div>
+						            </div>
+						        </div>
+						        <div >
+						            <label >Parcelas</label>
+						            <div >
+						                <div >
+						                    <input  maxlength="2" ng-required="true" type="text"  ng-model="student.installments">
+						                </div>
+						            </div>
+						        </div>
+						        <div >
+						            <label >Valor da mensalidade</label>
+						            <div >
+						                <div >
+						                    <span >R$</span>
+						                    <input  maxlength="7" ng-required="true" type="text" ng-model="student.monthly_payment" />
+						                </div>
+						            </div>
+						        </div>
+						    </div>
+						</div>
+
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

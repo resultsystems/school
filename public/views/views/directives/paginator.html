@@ -1,0 +1,30 @@
+<div class="col-sm-12 text-center">
+     <div class="col-sm-3" ng-if="_total>0">
+          {{_from}} a {{_to}} de {{_total}}<br>
+          Página {{_currentPage}} de {{_lastPage}}
+     </div>
+     <div class="col-sm-2 text-center hidden-print" ng-hide="_currentPage==1" ng-if="_lastPage>1">
+          <button type="button" class="btn btn-xs btn-info" ng-click="previousPagePaginator()">&lt;&lt; anterior</button>
+     </div>
+     <div class="col-sm-1 text-center hidden-print" ng-if="_lastPage>2">
+          <button type="button" class="btn btn-xs btn-info" ng-click="gotoPagePaginator()">ir para</button>
+     </div>
+     <div class="col-sm-1 text-center hidden-print" ng-if="_lastPage>2">
+          <input type="text" ng-model="paginator._irPara" class="form-control">
+     </div>
+     <div class="col-sm-2 text-center hidden-print" ng-hide="_currentPage==_lastPage" ng-if="_lastPage>1">
+          <button type="button" class="btn btn-xs btn-info" ng-click="nextPagePaginator()">próxima &gt;&gt;</button>
+     </div>
+     <div class="col-sm-3 hidden-print" ng-init="paginator._perPage=_perPage">
+          <select name="paginator" ng-model="paginator._perPage" class="form-control" ng-change="filterPagePaginator()">
+               <optgroup label="Registros por página"></optgroup>
+               <option value="5" ng-selected="_perPage==5">5 registros por página</option>
+               <option value="10" ng-selected="_perPage==10">10 registros por página</option>
+               <option value="30" ng-selected="_perPage==30">30 registros por página</option>
+               <option value="50" ng-selected="_perPage==50">50 registros por página</option>
+               <option value="100" ng-selected="_perPage==100">100 registros por página</option>
+               <option value="500" ng-selected="_perPage==500">500 registros por página</option>
+               <option value="1000" ng-selected="_perPage==1000">1000 registros por página</option>
+          </select>
+     </div>
+</div>

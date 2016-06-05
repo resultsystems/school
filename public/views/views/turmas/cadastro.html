@@ -1,0 +1,50 @@
+<h3 >
+	Turmas <small>/ Cadastro</small>
+</h3>
+<div  ng-init="gets()">
+	<div >
+		<div >
+			<div >
+				<form ng-submit='save(classroom)' >
+					<div >
+						<div >
+							<label >Nome</label>
+							<div >
+								<div >
+									<input type="text"  ng-model="classroom.name">
+								</div>
+								<div >
+									Nome obrigatório
+								</div>
+							</div>
+						</div>
+					</div>
+					<div >
+						<label >Professor</label>
+						<div >
+							<select  data-placeholder="Select..." ng-model="classroom.teacher_id" ng-options="teacher.id as teacher.name for teacher in teachers" id="classroomTeacher">
+								<option value="Selecione um professor"></option>
+							</select>
+						</div>
+					</div>
+					<div >
+						<label >Horário</label>
+						<div >
+							<select  data-placeholder="Select..." ng-model="classroom.schedule_id" ng-options="schedule.id as schedule.name for schedule in schedules" id="classroomSchedule">
+								<option value="Selecione um horário"></option>
+							</select>
+						</div>
+					</div>					
+					<div >
+						<div >
+							<div >
+								<button type="submit" class="btn purple"><i ></i> Salvar</button>
+								<button type="button" >Cancelar</button>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

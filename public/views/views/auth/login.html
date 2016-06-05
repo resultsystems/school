@@ -1,0 +1,37 @@
+<form  ng-submit="login(auth)">
+
+<div >
+  <label  for="type">Tipo de login</label>
+  <div >
+    <select ng-model="auth.type" >
+      <option value="Student">Aluno</option>
+      <option value="Employee">Funcionário</option>
+      <option value="Teacher">Professor</option>
+    </select>
+  </div>
+</div>
+
+<div >
+  <label  for="username">Usuário/Email</label>
+  <div >
+  <input ng-model="auth.username" type="text" placeholder="Usuário/Email"  required="">
+  <span >Obrigatório</span>
+  </div>
+</div>
+
+<div >
+  <label  for="password">Senha</label>
+  <div >
+  <input ng-model="auth.password" type="password" placeholder="Senha"  required="">
+  <span >Obrigatório</span>
+  </div>
+</div>
+
+<div >
+  <label  for=""></label>
+  <div >
+    <button >Logar</button>
+  </div>
+</div>
+
+</form>

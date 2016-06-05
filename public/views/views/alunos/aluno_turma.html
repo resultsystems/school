@@ -1,0 +1,38 @@
+<h3 >
+Aluno <small>/ Turma</small>
+</h3>
+<div >
+	<div >
+		<div >
+			<div >
+				<form ng-submit='save(classroom)' >
+					<div >
+						<div >
+							<label >Aluno</label>
+							<div >
+								<select  data-placeholder="Selecione o aluno" ng-model="classroom.teacher_id" ng-options="teacher.id as teacher.name for teacher in teachers">
+									<option value="Selecione o aluno"></option>
+								</select>
+							</div>
+						</div>
+						<div >
+							<label >Turma</label>
+							<div >
+								<select  data-placeholder="Selecione a turma" ng-model="student.teacher_id" ng-options="teacher.id as teacher.name for teacher in teachers">
+								</select>
+							</div>
+						</div>
+						<div >
+							<div >
+								<div >
+									<button type="submit" class="btn purple"><i ></i> Salvar</button>
+									<button type="button" >Cancelar</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

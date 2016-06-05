@@ -1,0 +1,57 @@
+<h3 >
+Turma {{ classroom.name }} <small>lista de alunos</small>
+</h3>
+<div >
+	<div >
+		<div >
+			<div >
+				<table  id="sample_1">
+					<thead>
+						<tr>
+							<th>
+								Nome
+							</th>
+							<th>
+								Telefone
+							</th>
+							<th>
+								Celular
+							</th>
+							<th>
+								Usuário
+							</th>
+							<th>
+								Email
+							</th>
+							<th>
+								Editar
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="student in students">
+							<td>
+								{{ student.name}}
+							</td>
+							<td>
+								{{ student.phone }}
+							</td>
+							<td>
+								{{ student.cellphone }}
+							</td>
+							<td>
+								{{ student.user.username }}
+							</td>
+							<td>
+								{{:: student.user.email }}
+							</td>
+							<td>
+								<a href="#/alunos/{{ student.id}}"><i ></i></a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>

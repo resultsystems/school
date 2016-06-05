@@ -1,0 +1,153 @@
+<h3 >
+	Alunos <small> / Lista</small>
+</h3>
+<div  ng-init="getAll()">
+	<div >
+		<div >
+			<div >
+				<div >
+					<i ></i>Lista de Alunos
+				</div>
+				<div >
+				</div>
+			</div>
+			<div >
+				<table  id="sample_1">
+					<thead>
+						<tr ng-if="user.owner_type=='Domain\\Employee\\Employee'">
+							<th>
+								Nome
+							</th>
+							<th>
+								Telefone
+							</th>
+							<th>
+								Celular
+							</th>
+							<th>
+								Usuário
+							</th>
+							<th>
+								Email
+							</th>
+							<th>
+								Inadimplente
+							</th>
+							<th colspan="4">
+								Ações
+							</th>
+						</tr>
+
+					                  <tr ng-if="user.owner_type=='Domain\\Employee\\Employee'">
+					                     <th>Filtro</th>
+					                    <th colspan="3"><input ng-model="search" ng-change="doFilter(search)" ng-model-options="{updateOn: 'default blur', debounce:{default: 500, blur: 0}}"></th>
+							<th colspan="6"></th>
+					                  </tr>
+						<tr ng-if="user.owner_type!='Domain\\Employee\\Employee'">
+							<th>
+								Nome
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="student in students" ng-if="user.owner_type=='Domain\\Employee\\Employee'">
+							<td>
+								{{ student.name }}
+							</td>
+							<td>
+								{{ student.phone }}
+							</td>
+							<td>
+								{{ student.cellphone }}
+							</td>
+							<td>
+								{{ student.user.username }}
+							</td>
+							<td>
+								{{ student.user.email }}
+							</td>
+							<td>
+								{{ student.has_overdue }}
+							</td>
+							<td>
+								<a href="#/alunos/{{ student.id}}/materias"><i ></i></a>
+							</td>
+							<td>
+								<a href="#/alunos/{{ student.id}}/boletos"><i ></i></a>
+							</td>
+							<td>
+								<a href="#/alunos/{{ student.id}}"><i ></i></a>
+							</td>
+							<td>
+								<a href ng-click="delete(student)"><i ></i></a>
+							</td>
+						</tr>
+						<tr ng-repeat="student in students" ng-if="user.owner_type!='Domain\\Employee\\Employee'">
+							<td>
+								{{ student.name }}
+							</td>
+						</tr>
+					</tbody>
+					<tfoot ng-if="user.owner_type=='Domain\\Employee\\Employee'">
+					<tr>
+					<th colspan="10">
+					  <nav >
+					      <ul >
+					          <li ng->
+					              <a href ng-click="previous()" aria-label="Previous">
+					                  <span aria-hidden="true">&laquo;</span>
+					              </a>
+					          </li>
+					          <li
+					              ng-
+					              ng-repeat="value in pagination.pageNumbers track by $index">
+					              <a href ng-click="setPage(value)">{{ value }}</a>
+					          </li>
+					          <li ng->
+					              <a href ng-click="next()" aria-label="Next">
+					                  <span aria-hidden="true">&raquo;</span>
+					              </a>
+					          </li>
+					      </ul>
+					  </nav>
+					</th>
+					</tr>
+					<tr>
+					<th colspan="10">Página {{ pagination.currentPage}} de {{ pagination.totalPages}} - Exibindo  {{pagination.currentItem}} a {{ pagination.lastCurrentPage}} de {{ pagination.totalItems}}
+					</th>
+					</tr>
+					</tfoot>
+					<tfoot ng-if="user.owner_type!='Domain\\Employee\\Employee'">
+					<tr>
+					<th>
+					  <nav >
+					      <ul >
+					          <li ng->
+					              <a href ng-click="previous()" aria-label="Previous">
+					                  <span aria-hidden="true">&laquo;</span>
+					              </a>
+					          </li>
+					          <li
+					              ng-
+					              ng-repeat="value in pagination.pageNumbers track by $index">
+					              <a href ng-click="setPage(value)">{{ value }}</a>
+					          </li>
+					          <li ng->
+					              <a href ng-click="next()" aria-label="Next">
+					                  <span aria-hidden="true">&raquo;</span>
+					              </a>
+					          </li>
+					      </ul>
+					  </nav>
+					</th>
+					</tr>
+					<tr>
+					<th>Página {{ pagination.currentPage}} de {{ pagination.totalPages}} - Exibindo  {{pagination.currentItem}} a {{ pagination.lastCurrentPage}} de {{ pagination.totalItems}}
+					</th>
+					</tr>
+					</tfoot>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>

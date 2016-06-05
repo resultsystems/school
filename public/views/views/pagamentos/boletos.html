@@ -1,0 +1,101 @@
+<h3 >
+	Pagamentos <small> / Lista</small>
+</h3>
+<div  ng-init="getAll()">
+	<div >
+		<div >
+			<div >
+				<div >
+					<i ></i>Lista de Pagamentos
+				</div>
+				<div >
+				</div>
+			</div>
+			<div >
+				<table >
+					<thead>
+						<tr>
+							<td ng-if="user.owner_type=='Domain\\Employee\\Employee'">
+								Aluno
+							</td>
+							<th>
+								Vencimento
+							</th>
+							<th>
+								Valor
+							</th>
+							<th>
+								Quitado?
+							</th>
+							<th colspan="2">
+								Ações
+							</th>
+						</tr>
+					      <tr>
+				                     <th>Filtro</th>
+				                    <th colspan="4"><input ng-model="search" ng-change="doFilter(search)" ng-model-options="{updateOn: 'default blur', debounce:{default: 500, blur: 0}}"></th>
+						<th ng-if="user.owner_type=='Domain\\Employee\\Employee'"></th>
+				                  </tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="billet in billets">
+							<td ng-if="user.owner_type=='Domain\\Employee\\Employee'">
+								{{ billet.student.name}}
+							</td>
+							<td>
+								{{ billet.new_due_date }}
+							</td>
+							<td>
+								{{ billet.currency }}
+							</td>
+							<td>
+								{{ billet.isSettled}}
+							</td>
+							<td>
+								<input  maxlength="10"  type="text"  ng-model="billet.datePay" size="3" ng-hide="billet.discharge_date"><br>
+								<a href ng-click="pay(billet)" ng-hide="billet.discharge_date">Quitar</a>
+							<td>
+								<pdf-download data-billet-id="{{ billet.id }}" filename="boleto.pdf"></pdf-download>
+								<a href ng-click="renderPDF(billet)" ng-hide="billet.printing" class="hide"><i  aria-hidden="true"></i></a>
+								<div ng-show="billet.printing">Aguarde...</div>
+							</td>
+							<td ng-if="user.owner_type=='Domain\\Student\\Student'" colspan="2">
+								<a href ng-click="renderPDF(billet)" ng-hide="billet.printing"><i  aria-hidden="true"></i></a>
+								<div ng-show="billet.printing">Aguarde...</div>
+							</td>
+						</tr>
+					</tbody>
+					<tfoot>
+					<tr>
+					<th colspan="6">
+					  <nav >
+					      <ul >
+					          <li ng->
+					              <a href ng-click="previous()" aria-label="Previous">
+					                  <span aria-hidden="true">&laquo;</span>
+					              </a>
+					          </li>
+					          <li
+					              ng-
+					              ng-repeat="value in pagination.pageNumbers track by $index">
+					              <a href ng-click="setPage(value)">{{ value }}</a>
+					          </li>
+					          <li ng->
+					              <a href ng-click="next()" aria-label="Next">
+					                  <span aria-hidden="true">&raquo;</span>
+					              </a>
+					          </li>
+					      </ul>
+					  </nav>
+					</th>
+					</tr>
+					<tr>
+					<th colspan="6">Página {{ pagination.currentPage}} de {{ pagination.totalPages}} - Exibindo  {{pagination.currentItem}} a {{ pagination.lastCurrentPage}} de {{ pagination.totalItems}}
+					</th>
+					</tr>
+					</tfoot>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>

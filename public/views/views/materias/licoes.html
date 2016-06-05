@@ -1,0 +1,42 @@
+<h3 >
+Matérias <small>/ Cadastro / Lições</small>
+</h3>
+<div  ng-init="getLessons()">
+	<div >
+		<div >
+			<div >
+				<form ng-submit='associateLessons(matter)' >
+					<div >
+						<div >
+							<label >Matéria</label>
+							<div >
+								<select  data-placeholder="Selecione a matéria" ng-model="matter" ng-options="matter as matter.name for matter in matters" id="matterMatter" ng-change="setChecked(matter)">
+									<option value="Selecione a matéria"></option>
+								</select>
+							</div>
+						</div>
+						<div >
+							<label >Lições</label>
+							<div >
+								<div  ng-repeat="lesson in lessons">
+									<label >{{:: lesson.name }}</label>
+									<div >
+										<input  type="checkbox"  ng-model="lesson.checked">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div >
+							<div >
+								<div >
+									<button type="submit" class="btn purple"><i ></i> Salvar</button>
+									<button type="button" >Cancelar</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

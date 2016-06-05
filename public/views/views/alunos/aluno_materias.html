@@ -1,0 +1,43 @@
+<h3 >
+	{{ student.name }} <small> / Turmas / Matérias</small>
+</h3>
+<div  ng-init="getClassroomWithMatters()">
+	<div >
+		<div >
+			<div >
+				<table >
+					<thead>
+						<tr>
+							<th>
+								Turma
+							</th>
+							<th>
+								Matérias
+							</th>
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="classroom in classrooms">
+							<td>
+								{{:: classroom.name }}
+							</td>
+							<td>
+								<div ng-repeat="matter in classroom.matters">
+									<input type="checkbox" ng-model="matter.checked"> {{:: matter.name }}
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<div >
+					<div >
+						<div >
+							<button type="button" class="btn purple" ng-click="syncMattersCompleteds(classrooms)"><i ></i> Concluir matérias selecionadas</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

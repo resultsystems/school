@@ -1,0 +1,42 @@
+<h3 >
+	Matérias <small>/ Cadastro</small>
+</h3>
+<div >
+	<div >
+		<div >
+			<div >
+				<form ng-submit='save(matter)' >
+					<div >
+						<div >
+							<label >Nome</label>
+							<div >
+								<div >
+									<input type="text"  ng-model="matter.name">
+								</div>
+								<div >
+									Nome obrigatório
+								</div>
+							</div>
+						</div>
+					</div>
+					<div >
+						<label >Carga Horária</label>
+						<div >
+							<div >
+								<input type="text"  ng-model="matter.workload">
+							</div>
+						</div>
+					</div>
+					<div >
+						<div >
+							<div >
+								<button type="submit" class="btn purple"><i ></i> Salvar</button>
+								<button type="button" >Cancelar</button>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

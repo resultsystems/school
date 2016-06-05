@@ -1,0 +1,56 @@
+<h3 >
+	Horários <small>/ Cadastro</small>
+</h3>
+<div >
+	<div >
+		<div >
+			<div >
+				<form ng-submit='save(schedule)' >
+					<div >
+						<div >
+							<label >Nome</label>
+							<div >
+								<div >
+									<input type="text"  ng-model="schedule.name">
+								</div>
+								<div >
+									Nome obrigatório
+								</div>
+							</div>
+						</div>
+					</div>
+					<div >
+						<label >Início</label>
+						<div >
+							<div >
+								<input type="text"  ng-model="schedule.start">
+							</div>
+							<div >
+								Ex: 08:30
+							</div>
+						</div>
+					</div>
+					<div >
+						<label >Término</label>
+						<div >
+							<div >
+								<input type="text"  ng-model="schedule.end">
+							</div>
+							<div >
+								Ex: 12:30
+							</div>
+						</div>
+					</div>
+					<div >
+						<div >
+							<div >
+								<button type="submit" class="btn purple"><i ></i> Salvar</button>
+								<button type="button" >Cancelar</button>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

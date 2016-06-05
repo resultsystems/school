@@ -1,0 +1,90 @@
+<h3 >
+	Matérias <small>/ Lista</small>
+</h3>
+<div >
+	<div  ng-init="getAll()">
+		<div >
+			<div >
+				<div >
+					<i ></i>Lista de matérias
+				</div>
+				<div >
+				</div>
+			</div>
+			<div >
+				<table >
+					<thead>
+						<tr>
+							<th>
+								Matérias
+							</th>
+							<th>
+								Carga Horária
+							</th>
+							<th>
+								Lições/Aulas
+							</th>
+							<th colspan="2">
+								Ações
+							</th>
+						</tr>
+						      <tr>
+					                     <th>Filtro</th>
+					                    <th colspan="4"><input ng-model="search" ng-change="doFilter(search)" ng-model-options="{updateOn: 'default blur', debounce:{default: 500, blur: 0}}"></th>
+					                  </tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="matter in matters">
+							<td>
+								{{ matter.name}}
+							</td>
+							<td>
+								{{ matter.workload }}
+							</td>
+							<td>
+								<div ng-repeat="lesson in matter.lessons | orderBy: 'name'">
+									{{ lesson.name}}<br>
+								</div>
+							</td>
+							<td>
+								<a href="#/materias/{{:: matter.id}}"><i ></i></a>
+							</td>
+							<td>
+								<a href ng-click="delete(matter)"><i ></i></a>
+							</td>
+						</tr>
+					</tbody>
+					<tfoot>
+					<tr>
+					<th colspan="5">
+					  <nav >
+					      <ul >
+					          <li ng->
+					              <a href ng-click="previous()" aria-label="Previous">
+					                  <span aria-hidden="true">&laquo;</span>
+					              </a>
+					          </li>
+					          <li
+					              ng-
+					              ng-repeat="value in pagination.pageNumbers track by $index">
+					              <a href ng-click="setPage(value)">{{ value }}</a>
+					          </li>
+					          <li ng->
+					              <a href ng-click="next()" aria-label="Next">
+					                  <span aria-hidden="true">&raquo;</span>
+					              </a>
+					          </li>
+					      </ul>
+					  </nav>
+					</th>
+					</tr>
+					<tr>
+					<th colspan="5">Página {{ pagination.currentPage}} de {{ pagination.totalPages}} - Exibindo  {{pagination.currentItem}} a {{ pagination.lastCurrentPage}} de {{ pagination.totalItems}}
+					</th>
+					</tr>
+					</tfoot>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>

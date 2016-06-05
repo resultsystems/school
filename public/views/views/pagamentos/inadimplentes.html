@@ -1,0 +1,49 @@
+<h3 >
+	Alunos <small> / Inadimplentes</small>
+</h3>
+<div  ng-init="getDefaulters()">
+	<div >
+		<div >
+			<div >
+				<table >
+					<thead>
+						<tr>
+							<td>
+								Aluno
+							</td>
+							<th>
+								Vencimento
+							</th>
+							<th>
+								Valor
+							</th>
+							<th colspan="2">
+								Ações
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="billet in billets">
+							<td>
+								{{ billet.student.name}}
+							</td>
+							<td>
+								{{ billet.new_due_date }}
+							</td>
+							<td>
+								{{ billet.currency }}
+							</td>
+							<td>
+								<input  maxlength="10"  type="text"  ng-model="billet.datePay" size="3" ng-hide="billet.discharge_date"><br>
+								<a href ng-click="pay(billet)" ng-hide="billet.discharge_date">Quitar</a>
+							<td>
+								<a href ng-click="renderPDF(billet)" ng-hide="billet.printing"><i  aria-hidden="true"></i></a>
+								<div ng-show="billet.printing">Aguarde...</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>

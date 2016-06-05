@@ -1,0 +1,51 @@
+<h3 >
+	{{ student.name }} <small> / Boletos</small>
+</h3>
+<div  ng-init="getBillets()">
+	<div >
+		<div >
+			<div >
+				<table >
+					<thead>
+						<tr>
+							<th>
+								Vencimento
+							</th>
+							<th>
+								Valor
+							</th>
+							<th>
+								Quitado?
+							</th>
+							<th colspan="2">
+								Ações
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="billet in student.billets">
+							<td>
+								{{ billet.new_due_date }}
+							</td>
+							<td>
+								{{ billet.currency }}
+							</td>
+							<td>
+								{{ billet.isSettled}}
+							</td>
+							<td>
+								<input  maxlength="10"  type="text"  ng-model="billet.datePay" size="3" ng-hide="billet.discharge_date"><br>
+								<a href ng-click="pay(billet)" ng-hide="billet.discharge_date">Quitar</a>
+							</td>
+							<td>
+								<pdf-download data-billet-id="{{ billet.id }}" filename="boleto.pdf"></pdf-download>
+								<a href ng-click="renderPDF(billet)" ng-hide="billet.printing" class="hide"><i  aria-hidden="true"></i></a>
+								<div ng-show="billet.printing">Aguarde...</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>

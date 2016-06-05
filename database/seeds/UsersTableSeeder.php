@@ -3,10 +3,10 @@
  * @Author: Leandro Henrique Reis <emtudo@gmail.com>
  * @Date:   2016-04-24 18:28:23
  * @Last Modified by:   Leandro Henrique Reis
- * @Last Modified time: 2016-06-04 19:50:39
+ * @Last Modified time: 2016-06-05 06:48:21
  */
-use App\Domains\Employee\Employee;
-use App\Domains\User\User;
+use Domain\Employee\Employee;
+use Domain\User\User;
 use Illuminate\Database\Seeder;
 
 class UsersTableSeeder extends Seeder

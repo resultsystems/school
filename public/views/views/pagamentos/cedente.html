@@ -1,0 +1,343 @@
+<h3 >
+	Cedente
+</h3>
+<div >
+	<div >
+		<div >
+			<div >
+				<form ng-submit='save(assignor)'  name="assignorForm" id="assignorForm">
+					<div >
+						<div >
+							<label >Logo</label>
+							<div >
+								<div  ngf-select ng-model="logo" name="logo" ngf-pattern="'image/jpg,image/jpeg'"
+    								ngf-accept="'image/jpg,image/jpeg'" ngf-max-size="1MB">Selecionar</div>
+							</div>
+						</div>
+					</div>
+					<div >
+						<div >
+							<label >Nome</label>
+							<div >
+								<div >
+									<input  maxlength="60"  type="text"  ng-model="assignor.name">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div >
+						<label >CNPJ</label>
+						<div >
+							<div >
+								<input  maxlength="14" type="text"  ng-model="assignor.cnpj">
+							</div>
+						</div>
+					</div>
+					<div >
+						<label >Cobrar juros após vencimento?</label>
+						<div >
+						 <input
+						    bs-switch
+						    ng-model="assignor.is_interest"
+						    type="checkbox"
+						    switch-size="100"
+						    switch-on-text="Sim"
+						    switch-off-text="Não"
+						    switch-label-width="100"
+						    switch-handle-width="100"
+						    switch-off-color="warning"
+						    switch-on-color="primary">
+						</div>
+					</div>
+					<div  ng-if="assignor.isIsterest=='true'">
+						<label >Multa</label>
+						<div >
+							<div >
+								<input type="text"  ng-model="assignor.payment_of_fine">
+							</div>
+						</div>
+					</div>
+					<div  ng-if="assignor.isIsterest=='true'">
+						<label >Juros</label>
+						<div >
+							<div >
+								<input type="text"  ng-model="assignor.interest">
+							</div>
+						</div>
+					</div>
+					<div  ng-if="assignor.isIsterest=='true'">
+						<label  ng-if="!assignor.days_protect">Protestar após [?] dias do vencimento</label>
+						<label  ng-if="assignor.days_protect==1">Protestar após {{ assignor.days_protect}} dia do vencimento</label>
+						<label  ng-if="assignor.days_protect>1">Protestar após {{ assignor.days_protect}} dias do vencimento</label>
+						<div >
+							<div >
+								<input type="number" step="1"  ng-model="assignor.days_protect">
+							</div>
+						</div>
+					</div>
+					<div >
+						<label >CEP</label>
+						<div >
+							<div >
+								<input  maxlength="8" type="text"  ng-model="assignor.postcode">
+							</div>
+						</div>
+					</div>
+					<div >
+						<label >Endereço</label>
+						<div >
+							<div >
+								<input  maxlength="60" type="text"  ng-model="assignor.street">
+							</div>
+						</div>
+					</div>
+					<div >
+						<label >Número</label>
+						<div >
+							<div >
+								<input  maxlength="10" type="text"  ng-model="assignor.number">
+							</div>
+						</div>
+					</div>
+					<div >
+						<label >Complemento</label>
+						<div >
+							<div >
+								<input  maxlength="30" type="text"  ng-model="assignor.complement">
+							</div>
+						</div>
+					</div>
+					<div >
+						<label >Bairro</label>
+						<div >
+							<div >
+								<input  maxlength="60" type="text"  ng-model="assignor.district">
+							</div>
+						</div>
+					</div>
+					<div >
+						<label >Estado</label>
+						<div >
+							<select  data-placeholder="Selecione um estado" ng-model="assignor.state" id="assignorState" ng-change="setState(assignor.state)">
+								<option value=""> Selecione um estado</option>
+								<option ng-repeat="state in states" ng-selected="state.initials==assignor.state" ng-value="state.initials">{{state.name}}</option>
+							</select>
+						</div>
+					</div>
+					<div >
+						<label >Cidade</label>
+						<div >
+							<select  data-placeholder="Selecione uma cidade" ng-model="assignor.city" id="assignorCity">
+								<option value="">Selecione uma cidade</option>
+								<option ng-repeat="city in cities" ng-selected="assignor.city==city" ng-value="city">{{city}}</option>
+							</select>
+						</div>
+					</div>
+
+					<div >
+						<label >Banco</label>
+						<div >
+							<select  data-placeholder="Selecione um banco" ng-model="assignor.bank" id="assignorBank">
+								<option value=""> Selecione um banco</option>
+								<option ng-repeat="bank in banks" ng-selected="bank.name==assignor.bank" ng-value="bank.name">{{bank.title}}</option>
+							</select>
+						</div>
+					</div>
+					<div >
+						<label >Agência</label>
+						<div >
+							<div >
+								<input  maxlength="8" type="text"  ng-model="assignor.agency">
+							</div>
+						</div>
+					</div>
+					<div >
+						<label >Dígito da agência</label>
+						<div >
+							<div >
+								<input  maxlength="1" type="text"  ng-model="assignor.digit_agency">
+							</div>
+						</div>
+					</div>
+					<div >
+						<label >Conta</label>
+						<div >
+							<div >
+								<input  maxlength="10" type="text"  ng-model="assignor.account">
+							</div>
+						</div>
+					</div>
+					<div >
+						<label >Dígito da conta</label>
+						<div >
+							<div >
+								<input  maxlength="1" type="text"  ng-model="assignor.digit_account">
+							</div>
+						</div>
+					</div>
+					<div >
+						<label >Carteira</label>
+						<div >
+							<div >
+								<input  maxlength="3" type="text"  ng-model="assignor.wallet">
+							</div>
+						</div>
+					</div>
+					<div  ng-show="assignor.bank=='bb'">
+						<label >Convênio</label>
+						<div >
+							<div >
+								<input  maxlength="3" type="text"  ng-model="assignor.agreement">
+							</div>
+						</div>
+					</div>
+					<div  ng-show="assignor.bank=='bb'">
+						<label >Variação da carteira</label>
+						<div >
+							<div >
+								<input  maxlength="3" type="text"  ng-model="assignor.portfolio_change">
+							</div>
+						</div>
+					</div>
+					<div >
+						<label >Espécie do documento</label>
+						<div >
+							<div >
+								<input  maxlength="3" type="text"  ng-model="assignor.kind_document">
+							</div>
+						</div>
+					</div>
+					<div  ng-show="assignor.bank=='hsbc'">
+						<label >Range</label>
+						<div >
+							<div >
+								<input  maxlength="3" type="text"  ng-model="assignor.range">
+							</div>
+						</div>
+					</div>
+					<div  ng-show="assignor.bank=='bradesco' || assignor.bank=='caixa' || assignor.bank=='santander'">
+						<label >Código do cliente</label>
+						<div >
+							<div >
+								<input  maxlength="3" type="text"  ng-model="assignor.client_id">
+							</div>
+						</div>
+					</div>
+					<div  ng-show="assignor.bank=='santander'">
+						<label >IOS</label>
+						<div >
+							<div >
+								<input  maxlength="3" type="text"  ng-model="assignor.ios">
+							</div>
+						</div>
+					</div>
+					<div >
+						<label >Aceite</label>
+						<div >
+						 <input
+						    bs-switch
+						    ng-model="assignor.acceptance"
+						    type="checkbox"
+						    switch-size="100"
+						    switch-on-text="Sim"
+						    switch-off-text="Não"
+						    switch-label-width="100"
+						    switch-handle-width="100"
+						    switch-off-color="warning"
+						    switch-on-color="primary">
+						</div>
+					</div>
+
+					<div >
+						<label >Instrução 01</label>
+						<div >
+							<div >
+								<input  maxlength="30" type="text"  ng-model="assignor.instruction01">
+							</div>
+						</div>
+					</div>
+					<div >
+						<label >Instrução 02</label>
+						<div >
+							<div >
+								<input  maxlength="30" type="text"  ng-model="assignor.instruction02">
+							</div>
+						</div>
+					</div>
+					<div >
+						<label >Instrução 03</label>
+						<div >
+							<div >
+								<input  maxlength="30" type="text"  ng-model="assignor.instruction03">
+							</div>
+						</div>
+					</div>
+					<div >
+						<label >Instrução 04</label>
+						<div >
+							<div >
+								<input  maxlength="30" type="text"  ng-model="assignor.instruction04">
+							</div>
+						</div>
+					</div>
+					<div >
+						<label >Instrução 05</label>
+						<div >
+							<div >
+								<input  maxlength="30" type="text"  ng-model="assignor.instruction05">
+							</div>
+						</div>
+					</div>
+					<div >
+					    <label >Demonstrativo 01</label>
+					    <div >
+					        <div >
+					            <input  maxlength="30" type="text"  ng-model="assignor.statement01">
+					        </div>
+					    </div>
+					</div>
+					<div >
+					    <label >Demonstrativo 02</label>
+					    <div >
+					        <div >
+					            <input  maxlength="30" type="text"  ng-model="assignor.statement02">
+					        </div>
+					    </div>
+					</div>
+					<div >
+					    <label >Demonstrativo 03</label>
+					    <div >
+					        <div >
+					            <input  maxlength="30" type="text"  ng-model="assignor.statement03">
+					        </div>
+					    </div>
+					</div>
+					<div >
+					    <label >Demonstrativo 04</label>
+					    <div >
+					        <div >
+					            <input  maxlength="30" type="text"  ng-model="assignor.statement04">
+					        </div>
+					    </div>
+					</div>
+					<div >
+					    <label >Demonstrativo 05</label>
+					    <div >
+					        <div >
+					            <input  maxlength="30" type="text"  ng-model="assignor.statement05">
+					        </div>
+					    </div>
+					</div>
+                				<div >
+						<div >
+							<div >
+								<button type="submit" class="btn purple"><i ></i> Salvar</button>
+								<button type="button" >Cancelar</button>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,2 +1,19 @@
-Apenas por questões legais a parti visual não está disponível pois foi construida sobre um template que não é gratuito.
-Assim que for alterado o template para um que seja gratuito ele será disponível.
+<!DOCTYPE html>
+<html ng-app="SchoolApp">
+<head>
+<title>Escola</title>
+</head>
+
+<body ng-controller="AppController" >
+        <modal visible="modalLogin" data-title="Autenticação - Administrativo" data-modal-close>
+            <ng-include src="'views/auth/login.html'"></ng-include>
+        </modal>
+
+    <nav ng-show="token">
+    <div class="page-container">
+        <div ui-view>
+        </div>
+    </div>
+    </nav>
+</body>
+</html>

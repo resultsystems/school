@@ -1,0 +1,118 @@
+<div >
+	<ul >
+		<li>
+			<i ></i>
+			<a href="#/dashboard.html">Home</a>
+			<i ></i>
+		</li>
+		<li>
+			<a href="#">Dashboard</a>
+		</li>
+	</ul>
+</div>
+<h3 >
+	Dashboard
+</h3>
+<div ng-controller="DashboardController">
+	<div >
+		<div >
+			<div >
+				<div >
+					<i ></i>
+				</div>
+				<div >
+					<div >
+						{{ dashboard.students.registers + dashboard.students.deletes }}
+					</div>
+					<div >
+						Alunos
+					</div>
+				</div>
+				<a  href="#/alunos">
+				Veja mais <i ></i>
+				</a>
+			</div>
+		</div>
+		<div >
+			<div >
+				<div >
+					<i ></i>
+				</div>
+				<div >
+					<div >
+						{{ dashboard.teachers.registers + dashboard.teachers.deletes }}
+					</div>
+					<div >
+						Professores
+					</div>
+				</div>
+				<a  href="#/professores">
+				Veja mais <i ></i>
+				</a>
+			</div>
+		</div>
+		<div >
+			<div >
+				<div >
+					<i ></i>
+				</div>
+				<div >
+					<div >
+						{{ dashboard.employees.registers + dashboard.employees.deletes }}
+					</div>
+					<div >
+						Funcionários
+					</div>
+				</div>
+				<a  href="#/funcionarios">
+				Veja mais <i ></i>
+				</a>
+			</div>
+		</div>
+		<div >
+			<div >
+				<div >
+					<i ></i>
+				</div>
+				<div >
+					<div >
+						{{ dashboard.students.deletes }}
+					</div>
+					<div >
+						Alunos excluídos
+					</div>
+				</div>
+			</div>
+		</div>
+		<div >
+			<div >
+				<div >
+					<i ></i>
+				</div>
+				<div >
+					<div >
+						{{ dashboard.teachers.deletes }}
+					</div>
+					<div >
+						Professores excluídos
+					</div>
+				</div>
+			</div>
+		</div>
+		<div >
+			<div >
+				<div >
+					<i ></i>
+				</div>
+				<div >
+					<div >
+						{{ dashboard.employees.deletes }}
+					</div>
+					<div >
+						Funcionários excluídos
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

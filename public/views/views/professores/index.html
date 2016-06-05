@@ -1,0 +1,145 @@
+<h3 >
+	Professores <small>/ Lista</small>
+</h3>
+<div >
+	<div  ng-init="getAll()">
+		<div >
+			<div >
+				<div >
+					<i ></i>Lista de Professores
+				</div>
+				<div >
+				</div>
+			</div>
+			<div >
+				<table >
+					<thead ng-if="user.owner_type=='Domain\\Employee\\Employee'">
+						<tr>
+							<th>
+								Nome
+							</th>
+							<th>
+								CPF
+							</th>
+							<th>
+								Telefone
+							</th>
+							<th>
+								Celular
+							</th>
+							<th>
+								Turmas
+							</th>
+							<th>
+								Ações
+							</th>
+						</tr>
+					      <tr>
+				                     <th>Filtro</th>
+				                    <th colspan="5"><input ng-model="search" ng-change="doFilter(search)" ng-model-options="{updateOn: 'default blur', debounce:{default: 500, blur: 0}}"></th>
+				                  </tr>
+					</thead>
+					<thead ng-if="user.owner_type=='Domain\\Student\\Student'">
+						<tr>
+							<th>
+								Nome
+							</th>
+						</tr>
+					</thead>
+					<tbody ng-if="user.owner_type=='Domain\\Employee\\Employee'">
+						<tr ng-repeat="teacher in teachers">
+							<td>
+								{{ teacher.name}}
+							</td>
+							<td>
+								{{ teacher.cpf }}
+							</td>
+							<td>
+								{{ teacher.phone }}
+							</td>
+							<td>
+								{{ teacher.cellphone }}
+							</td>
+							<td>
+								<div ng-repeat="classroom in teacher.classrooms | orderBy: 'name'">
+									{{ classroom.name}}: {{ classroom.schedule.start}}-{{ classroom.schedule.end}}
+								</div>
+							</td>
+							<td>
+								<a href="#/professores/{{ teacher.id}}"><i ></i></a>
+							</td>
+							<td>
+								<a href ng-click="delete(teacher)"><i ></i></a>
+							</td>
+						</tr>
+					</tbody>
+					<tbody ng-if="user.owner_type=='Domain\\Student\\Student'">
+						<tr ng-repeat="teacher in teachers">
+							<td>
+								{{:: teacher.name}}
+							</td>
+						</tr>
+					</tbody>
+					<tfoot ng-if="user.owner_type=='Domain\\Employee\\Employee'">
+					<tr>
+					<th colspan="6">
+					  <nav >
+					      <ul >
+					          <li ng->
+					              <a href ng-click="previous()" aria-label="Previous">
+					                  <span aria-hidden="true">&laquo;</span>
+					              </a>
+					          </li>
+					          <li
+					              ng-
+					              ng-repeat="value in pagination.pageNumbers track by $index">
+					              <a href ng-click="setPage(value)">{{ value }}</a>
+					          </li>
+					          <li ng->
+					              <a href ng-click="next()" aria-label="Next">
+					                  <span aria-hidden="true">&raquo;</span>
+					              </a>
+					          </li>
+					      </ul>
+					  </nav>
+					</th>
+					</tr>
+					<tr>
+					<th colspan="6">Página {{ pagination.currentPage}} de {{ pagination.totalPages}} - Exibindo  {{pagination.currentItem}} a {{ pagination.lastCurrentPage}} de {{ pagination.totalItems}}
+					</th>
+					</tr>
+					</tfoot>
+					<tfoot ng-if="user.owner_type=='Domain\\Student\\Student'">
+					<tr>
+					<th>
+					  <nav >
+					      <ul >
+					          <li ng->
+					              <a href ng-click="previous()" aria-label="Previous">
+					                  <span aria-hidden="true">&laquo;</span>
+					              </a>
+					          </li>
+					          <li
+					              ng-
+					              ng-repeat="value in pagination.pageNumbers track by $index">
+					              <a href ng-click="setPage(value)">{{ value }}</a>
+					          </li>
+					          <li ng->
+					              <a href ng-click="next()" aria-label="Next">
+					                  <span aria-hidden="true">&raquo;</span>
+					              </a>
+					          </li>
+					      </ul>
+					  </nav>
+					</th>
+					</tr>
+					<tr>
+					<th>Página {{ pagination.currentPage}} de {{ pagination.totalPages}} - Exibindo  {{pagination.currentItem}} a {{ pagination.lastCurrentPage}} de {{ pagination.totalItems}}
+					</th>
+					</tr>
+					</tfoot>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,186 @@
+<h3 >
+	Professores <small>/ Cadastro</small>
+</h3>
+<div  ng-init="gets()">
+	<div >
+		<div >
+			<div >
+				<form ng-submit='save(teacher)' >
+					<div >
+						<div >
+							<label >Nome</label>
+							<div >
+								<div >
+									<input type="text"  ng-model="teacher.name">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div >
+						<label >Sexo</label>
+						<div >
+						 <input
+						    bs-switch
+						    ng-model="teacher.sex"
+						    type="checkbox"
+						    switch-size="100"
+						    switch-on-text="Feminino"
+						    switch-off-text="Masculino"
+						    switch-label-width="100"
+						    switch-handle-width="100"
+						    switch-inverse="true"
+						    switch-off-color="primary"
+						    switch-on-color="warning"
+						    ng-true-value="'female'"
+						    ng-false-value="'male'">
+						</div>
+					</div>
+					<div >
+						<label >CPF</label>
+						<div >
+							<div >
+								<input type="text"  ng-model="teacher.cpf">
+							</div>
+						</div>
+					</div>
+					<div >
+						<label >RG</label>
+						<div >
+							<div >
+								<input type="text"  ng-model="teacher.rg">
+							</div>
+						</div>
+					</div>
+					<div >
+						<label >CEP</label>
+						<div >
+							<div >
+								<input type="text"  ng-model="teacher.postcode">
+							</div>
+						</div>
+					</div>
+					<div >
+						<label >Endereço Residencial</label>
+						<div >
+							<div >
+								<input type="text"  ng-model="teacher.street">
+							</div>
+						</div>
+					</div>
+					<div >
+						<label >Número</label>
+						<div >
+							<div >
+								<input type="text"  ng-model="teacher.number">
+							</div>
+						</div>
+					</div>
+					<div >
+						<label >Complemento</label>
+						<div >
+							<div >
+								<input type="text"  ng-model="teacher.complement">
+							</div>
+						</div>
+					</div>
+					<div >
+						<label >Bairro</label>
+						<div >
+							<div >
+								<input type="text"  ng-model="teacher.district">
+							</div>
+						</div>
+					</div>
+					<div >
+						<label >Estado</label>
+						<div >
+							<select  data-placeholder="Selecione um estado" ng-model="teacher.state" id="teacherState" ng-change="setState(teacher.state)">
+								<option value=""> Selecione um estado</option>
+								<option ng-repeat="state in states" ng-selected="state.initials==teacher.state" ng-value="state.initials">{{state.name}}</option>
+							</select>
+						</div>
+					</div>
+					<div >
+						<label >Cidade</label>
+						<div >
+							<select  data-placeholder="Selecione uma cidade" ng-model="teacher.city" id="teacherCity">
+								<option value="">Selecione uma cidade</option>
+								<option ng-repeat="city in cities" ng-selected="teacher.city==city" ng-value="city">{{city}}</option>
+							</select>
+						</div>
+					</div>
+					<div >
+						<label >Telefone</label>
+						<div >
+							<div >
+								<input type="text"  ng-model="teacher.phone">
+							</div>
+						</div>
+					</div>
+					<div >
+						<label >Celular</label>
+						<div >
+							<div >
+								<input type="text"  ng-model="teacher.cellphone">
+							</div>
+						</div>
+					</div>
+					<div >
+						<label >Tipo de salário</label>
+						<div >
+						 <input
+						    bs-switch
+						    ng-model="teacher.type_salary"
+						    type="checkbox"
+						    switch-size="100"
+						    switch-on-text="Comissao"
+						    switch-off-text="Por aula"
+						    switch-label-width="100"
+						    switch-handle-width="100"
+						    switch-inverse="true"
+						    switch-off-color="primary"
+						    switch-on-color="warning"
+						    ng-true-value="'commission'"
+						    ng-false-value="'class_time'">
+						</div>
+					</div>
+					<div >
+						<label >Salário</label>
+						<div >
+							<div >
+								<span  ng-if="teacher.type_salary=='commission'">%</span>
+								<span  ng-if="teacher.type_salary=='class_time'">R$</span>
+								<input type="text" ng-model="teacher.salary" />
+							</div>
+						</div>
+					</div>	
+			                        <div >
+			                           <label >Email</label>
+			                           <div >
+			                              <input  maxlength="255" ng-required="true" type="email" placeholder=""  ng-model="teacher.user.email">
+			                           </div>
+			                        </div>
+			                        <div >
+			                           <label >Usuário</label>
+			                           <div >
+			                              <input  maxlength="30" ng-required="true" type="text" placeholder=""  ng-model="teacher.user.username">
+			                           </div>
+			                        </div>
+			                        <div  ng-if="!teacher.id">
+			                           <label >Senha</label>
+			                           <div >
+			                              <input  maxlength="255" ng-required="true" type="password" placeholder=""  ng-model="teacher.user.password" minlength="6">
+			                           </div>
+			                        </div>
+					<div >
+						<div >
+							<div >
+								<button type="submit" class="btn purple"><i ></i> Salvar</button>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,77 @@
+<h3 >
+	Funcionários <small> / Cadastro</small>
+</h3>
+<div >
+	<div >
+		<div >
+			<div >
+				<form ng-submit='save(employee)' >
+					<div >
+						<div >
+							<label >Nome</label>
+							<div >
+								<div >
+									<input type="text"  ng-model="employee.name">
+								</div>
+								<div >
+									Nome obrigatório
+								</div>
+							</div>
+						</div>
+					</div>
+					<div >
+						<label >Sexo</label>
+						<div >
+						 <input
+						    bs-switch
+						    ng-model="employee.sex"
+						    type="checkbox"
+						    switch-size="100"
+						    switch-on-text="Feminino"
+						    switch-off-text="Masculino"
+						    switch-label-width="100"
+						    switch-handle-width="100"
+						    switch-inverse="true"
+						    switch-off-color="primary"
+						    switch-on-color="warning"
+						    ng-true-value="'female'"
+						    ng-false-value="'male'">
+						</div>
+					</div>
+					<div >
+						<label >Usuário</label>
+						<div >
+							<div >
+								<input type="text"  ng-model="employee.user.username">
+							</div>
+						</div>
+					</div>					
+					<div >
+						<label >Email</label>
+						<div >
+							<div >
+								<input type="text"  ng-model="employee.user.email">
+							</div>
+						</div>
+					</div>					
+					<div  ng-hide="employee.id">
+						<label >Senha</label>
+						<div >
+							<div >
+								<input type="password"  ng-model="employee.user.password">
+							</div>
+						</div>
+					</div>
+					<div >
+						<div >
+							<div >
+								<button type="submit" class="btn purple"><i ></i> Salvar</button>
+								<button type="button" >Cancelar</button>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
