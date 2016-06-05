@@ -1,3 +1,4 @@
+
 # Sistema para gerenciamento de escola
 
 ## O que tem o sistema?
@@ -27,7 +28,11 @@
 - composer create-project --prefer-dist resultsystems/school school
 - cd school
 - npm install
+- gulp
 - configure o arquivo .env
+- php artisan migrate
+Opcionalmente gere dados falsos
+- php artisan db:seed --class=Fakers 
 
 ### Proposta
 Implementar o sistema de template AdminLTE, pois o sistema para o qual foi desenvolvido foi removido para poder disponibilizar o código fonte para não ter problemas legais.
