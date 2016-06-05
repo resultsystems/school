@@ -1,0 +1,24 @@
+{
+  "name": "School",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Leandro Henrique",
+  "private": true,
+  "devDependencies": {
+    "gulp": "^3.8.8"
+  },
+  "dependencies": {
+    "angular-bootstrap-switch": "^0.5.0",
+    "angular-input-masks": "^2.3.0",
+    "bootstrap-sass": "^3.0.0",
+    "event-stream": "^3.3.2",
+    "gulp": "^3.9.1",
+    "laravel-elixir": "^4.0.0",
+    "moment": "^2.13.0",
+    "ng-file-upload": "^12.0.4",
+    "run-sequence": "^1.1.5",
+    "sweetalert": "^1.1.3"
+  }
+}
