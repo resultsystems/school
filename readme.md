@@ -1,6 +1,7 @@
 # Sistema para gerenciamento de escola de música
 
 ## O que tem o sistema?
+- Com TDD (ok)
 - Cadastro de alunos
 - Cadastro de cedente
 - Cadastro de funcionários
@@ -10,7 +11,7 @@
 - Cadastro de professores
 - Cadastro de turmas
 - Cadastro de usuários (Aluno, Funcionário e Professor)
-- Geração de boleto automático (caixa e. federal, banco do brasil, banco itau, santander, hsbc)
+- Geração de boleto automático (caixa e. federal, banco do brasil, banco itau, hsbc, santander)
 
 ## Requisitos do servidor
 
