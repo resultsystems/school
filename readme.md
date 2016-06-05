@@ -1,7 +1,7 @@
 # Sistema para gerenciamento de escola de música
 
 ## O que tem o sistema?
-- Com TDD (ok)
+- Todo desenvolvido com TDD
 - Cadastro de alunos
 - Cadastro de cedente
 - Cadastro de funcionários
