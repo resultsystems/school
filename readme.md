@@ -25,6 +25,8 @@
 ## No terminal execute
 
 - composer create-project --prefer-dist resultsystems/school school
+- cd school
+- npm install
 - configure o arquivo .env
 
 ### Proposta
