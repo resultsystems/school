@@ -9,8 +9,8 @@
 - Cadastro de lições
 - Cadastro de professores
 - Cadastro de turmas
-- Cadastro de Usuários (Aluno, Funcionário e Professor)
-- Geração de boleto automático
+- Cadastro de usuários (Aluno, Funcionário e Professor)
+- Geração de boleto automático (caixa e. federal, banco do brasil, banco itau, santander, hsbc)
 
 ## Requisitos do servidor
 
