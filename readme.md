@@ -35,8 +35,8 @@
 - gulp
 - configure o arquivo .env
 - php artisan migrate
-Opcionalmente gere dados falsos
+### Opcionalmente gere dados falsos
 - php artisan db:seed --class=Fakers 
 
-### Proposta
+## Proposta
 Implementar o sistema de template AdminLTE, pois o sistema para o qual foi desenvolvido foi removido para poder disponibilizar o código fonte para não ter problemas legais.
