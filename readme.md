@@ -35,6 +35,7 @@
 - gulp
 - configure o arquivo .env
 - php artisan migrate
+
 ### Opcionalmente gere dados falsos
 - php artisan db:seed --class=Fakers 
 
