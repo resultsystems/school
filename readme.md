@@ -1,6 +1,10 @@
 
 # Sistema para gerenciamento de escola
 
+[Vídeo com template](https://www.youtube.com/watch?v=Z11WPs8AJvY)
+
+[Vídeo explicando o sistema a ideia](https://www.youtube.com/watch?v=kd0y0e_2dR4)
+
 ## O que tem o sistema?
 - Todo desenvolvido com TDD
 - Cadastro de alunos
