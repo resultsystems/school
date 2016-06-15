@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <h1>{{ msg }}</h1>
+    <div class="container">
+      <h1>{{ msg }}</h1>
+    </div>
   </div>
 </template>
 
@@ -8,8 +10,11 @@
 export default {
   data () {
     return {
-      msg: 'Hello Vue!'
+      msg: 'Hello Vue!!!!'
     }
+  },
+  created: function(){
+    Materialize.toast('Hello World', 1000) 
   }
 }
 </script>
