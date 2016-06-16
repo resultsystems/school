@@ -1,7 +1,7 @@
 <template>
 
 <div class="container">
-    <div class="row" v-if="!isLogged">
+    <div class="row">
         <div class="col s12 m8 offset-m2">
             <form class="login-form">
                 <div class="card">
@@ -54,9 +54,6 @@
             </div>
         
     </div>
-    <div class="row" v-if="isLogged">
-        Welcome
-    </div>
 </div>
 
 
@@ -79,7 +76,7 @@ export default{
             doLogin
         },
         getters: {
-            getLogin, isLogged
+            getLogin
         }
     },
     methods:    {
