@@ -1,8 +1,10 @@
 
 const LOGIN_KEY = 'login-school'
 
+let emptyLogin = '{"user":{"username":null,"password":null},"token":null}'
+
 const state = {
-  login: JSON.parse(localStorage.getItem(LOGIN_KEY) || '{}')
+  login: JSON.parse(localStorage.getItem(LOGIN_KEY) || emptyLogin)
 }
 
 const mutations = {

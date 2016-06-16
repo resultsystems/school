@@ -1,7 +1,11 @@
 export function doLogin({dispatch},user){
 
   //a fake login
-  let token = "loremipsum";
+  setInterval(function(){ 
+    let token = "loremipsum";
+    dispatch("LOGIN",user,token);
+  }, 2000);
+  
 
-  dispatch("LOGIN",user,token);
+
 }
