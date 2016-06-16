@@ -1,20 +1,21 @@
 <template>
   <div id="app">
-    <div class="container">
-      <h1>{{ msg }}</h1>
-    </div>
+    <Login></Login>
   </div>
 </template>
 
 <script>
+  
+import store from './vuex/store'
+import Login from './components/login.vue'
+
 export default {
-  data () {
-    return {
-      msg: 'Hello Vue!!!!'
-    }
+  components: {
+    Login
   },
-  created: function(){
+  created() {
     Materialize.toast('Hello World', 1000) 
-  }
+  },
+  store
 }
 </script>
