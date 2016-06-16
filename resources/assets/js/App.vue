@@ -1,19 +1,19 @@
 <template>
   <div id="app">
     <Login v-if="!isLogged"></Login>
-    <div v-else>Welcome</div>
+    <Admin v-else></Admin>
   </div>
 </template>
 
 <script>
-  
 import store from './vuex/store'
 import {isLogged,getLogin} from './vuex/modules/login/getters'
 import Login from './components/login.vue'
+import Admin from './components/admin.vue'
 
 export default {
   components: {
-    Login
+    Login,Admin
   },
   vuex: {
       getters: {

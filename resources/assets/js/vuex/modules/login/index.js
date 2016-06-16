@@ -11,6 +11,10 @@ const mutations = {
   LOGIN (state, user, token) {
     state.login = {user,token}
     localStorage.setItem(LOGIN_KEY,JSON.stringify(state.login));
+  },
+  LOGOUT (state){
+    state.login = JSON.parse(emptyLogin);
+    localStorage.setItem(LOGIN_KEY,JSON.stringify(state.login));
   }
 }
 
