@@ -1,5 +1,6 @@
 import Home from './components/home.vue'
 import About from './components/about.vue'
+import Profile from './components/profile.vue'
 
 const Routes = {
     '/home': {
@@ -7,6 +8,9 @@ const Routes = {
     },
     '/about':{
         component: About
+    },
+    '/profile':{
+      component: Profile
     }
 }
 
