@@ -1,8 +1,12 @@
-import Admin from './components/admin.vue'
+import Home from './components/home.vue'
+import About from './components/about.vue'
 
 const Routes = {
-    '/admin': {
-        component: Admin
+    '/home': {
+        component: Home
+    },
+    '/about':{
+        component: About
     }
 }
 

@@ -23,7 +23,7 @@ export default {
   created() {
     if (this.isLogged){
       Materialize.toast(`Hello, ${this.getLogin.user.username}!` , 1000)
-    } 
+    }
   },
   store
 }

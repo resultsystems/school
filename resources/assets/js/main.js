@@ -11,7 +11,7 @@ const router = new VueRouter({
 })
 
 router.redirect({
-    '/': '/admin'
+    '/': '/home'
 })
 
 router.map(Routes)
