@@ -15,4 +15,6 @@ elixir(function (mix) {
     "main.css"
   ],'public/css/dist.css');
 
+  mix.copy('node_modules/materialize-css/dist/fonts', 'public/fonts');
+
 });

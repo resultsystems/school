@@ -1,20 +1,30 @@
 <template>
-  <div id="app">
-    <div class="container">
-      <h1>{{ msg }}</h1>
-    </div>
+  <div id="app" >
+    <Login v-if="!isLogged"></Login>
+    <Admin v-else></Admin>
   </div>
 </template>
 
 <script>
+import store from './vuex/store'
+import {isLogged,getLogin} from './vuex/modules/login/getters'
+import Login from './components/login.vue'
+import Admin from './components/admin.vue'
+
 export default {
-  data () {
-    return {
-      msg: 'Hello Vue!!!!'
+  components: {
+    Login,Admin
+  },
+  vuex: {
+      getters: {
+        isLogged, getLogin
+      }
+  },
+  created() {
+    if (this.isLogged){
+      Materialize.toast(`Hello, ${this.getLogin.user.username}!` , 1000)
     }
   },
-  created: function(){
-    Materialize.toast('Hello World', 1000) 
-  }
+  store
 }
 </script>
