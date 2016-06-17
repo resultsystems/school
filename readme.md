@@ -50,6 +50,13 @@ php artisan key:generate
 
 **http.conf**
 ```xml
+<Directory /path/to/school/>
+        Options Indexes FollowSymLinks
+        AllowOverride All
+        Order allow,deny
+        Require all granted
+</Directory>
+
 <VirtualHost school.dev:80> 
      ServerAdmin your@email.dev     
      ServerName school.dev
