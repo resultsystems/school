@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" >
     <Login v-if="!isLogged"></Login>
     <Admin v-else></Admin>
   </div>

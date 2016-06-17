@@ -1,9 +1,6 @@
 <template>
 
-  <div class="row">
-    <div class="col s12 m8 offset-m2">
       <div class="card-panel grey lighten-3 z-depth-2">
-
         <div class="row valign-wrapper">
           <div class="col s2">
             <i class="medium material-icons">perm_identity</i>
@@ -31,8 +28,7 @@
             </div>
 
       </div>
-    </div>
-  </div>
+
 
 </template>
 <script>
