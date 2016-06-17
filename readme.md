@@ -39,5 +39,32 @@
 ### Opcionalmente gere dados falsos
 - php artisan db:seed --class=Fakers 
 
-## Proposta
-Implementar o sistema de template AdminLTE, pois o sistema para o qual foi desenvolvido foi removido para poder disponibilizar o código fonte para não ter problemas legais.
+### If you get this error: *No supported encrypter found*
+
+run:
+```
+php artisan key:generate
+``` 
+
+### Virtual Host
+
+**http.conf**
+```xml
+<VirtualHost school.dev:80> 
+     ServerAdmin your@email.dev     
+     ServerName school.dev
+     ServerAlias school.dev
+     DocumentRoot /path/to/school/public
+     ErrorLog /path/to/school/storage/logs/mysite.error.log 
+     CustomLog /path/to/school/storage/logs/mysite.access.log combined
+</VirtualHost>
+```
+
+**hosts**
+```
+127.0.0.1	school.dev
+```
+
+## Roadmap
+
+Implementar o sistema utilizando Vue-js e Materialize.
