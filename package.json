@@ -1,24 +1,43 @@
 {
-  "name": "School",
+  "name": "school",
   "version": "1.0.0",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Leandro Henrique",
+  "author": "Leandro Henrique & Daniel Schmitz",
   "private": true,
   "devDependencies": {
-    "gulp": "^3.8.8"
+    "gulp": "^3.8.8",
+    "babel-core": "^6.0.0",
+    "babel-plugin-transform-runtime": "^6.0.0",
+    "babel-preset-es2015": "^6.0.0",
+    "babel-preset-stage-2": "^6.0.0",
+    "babel-runtime": "^6.0.0",
+    "cross-env": "^1.0.6",
+    "babelify": "^7.2.0",
+    "browserify": "^12.0.1",
+    "browserify-hmr": "^0.3.1",
+    "uglify-js": "^2.5.0",
+    "vueify": "^8.5.2",
+    "watchify": "^3.4.0"
   },
   "dependencies": {
-    "angular-bootstrap-switch": "^0.5.0",
-    "angular-input-masks": "^2.3.0",
-    "bootstrap-sass": "^3.0.0",
     "event-stream": "^3.3.2",
     "gulp": "^3.9.1",
     "laravel-elixir": "^4.0.0",
+    "materialize-css": "^0.97.6",
     "moment": "^2.13.0",
-    "ng-file-upload": "^12.0.4",
     "run-sequence": "^1.1.5",
-    "sweetalert": "^1.1.3"
+    "vue": "^1.0.0",
+    "vue-resource": "^0.7.4",
+    "vue-router": "^0.7.13",
+    "vue-validator": "^2.1.3",
+    "vuex": "^0.6.3"
+  },
+  "browserify": {
+    "transform": [
+      "vueify",
+      "babelify"
+    ]
   }
 }
