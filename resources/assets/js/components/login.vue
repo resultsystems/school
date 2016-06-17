@@ -33,7 +33,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="card-action blue-grey lighten-3">
                         <div class="center-align">
                             <a @click="tryLogin" class="btn blue-grey darken-1" v-bind:class="{ 'disabled': loading }"><i class="material-icons left">vpn_key</i>Login</a>
@@ -52,7 +52,7 @@
                     <a href="#" class="">Esqueci a senha</a>
                 </div>
             </div>
-        
+
     </div>
 </div>
 
@@ -64,9 +64,9 @@ import {getLogin,isLogged} from '../vuex/modules/login/getters'
 import message from '../functions'
 
 export default{
-    data () { 
+    data () {
         return {
-            username:'', 
+            username:'',
             password:'',
             loading:false
         }
@@ -81,8 +81,11 @@ export default{
     },
     methods:    {
         tryLogin(){
-            this.loading=true
-            this.doLogin({'username':this.username,'password':this.password});
+            this.loading = true
+            let user = {'username':this.username,'password':this.password}
+            this.doLogin(user,(r)=>{
+                this.$data.loading=false;
+            })
         }
     }
 }
