@@ -75,3 +75,7 @@ php artisan key:generate
 ## Roadmap
 
 Implementar o sistema utilizando Vue-js e Materialize.
+
+- [x] Estrutura básica com (vue,vuex,router,resource)
+- [ ] Login consultando api
+- [ ] Router com menu carregando os forms
