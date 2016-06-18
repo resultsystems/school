@@ -72,6 +72,24 @@ php artisan key:generate
 127.0.0.1	school.dev
 ```
 
+## Quer contribuir?
+
+- Fork o projeto
+- Faça o clone
+- No diretório criado, faça:
+- composer install
+- npm install
+- copie o arquivo .env.example para .env e edite-o apontando para o banco de dados
+- php artisan migrate
+- php artisan db:seed --class=Fakers
+- php artisan key:generate
+- npm i -g gulp
+- gulp      (para compilar todos os javascript)
+- gulp watch     (para recompilar ao salvar os arquivos)
+- Faça as alterações e faça Pull Request
+
+
+
 ## Roadmap
 
 Implementar o sistema utilizando Vue-js e Materialize.
