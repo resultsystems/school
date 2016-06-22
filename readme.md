@@ -39,12 +39,22 @@
 ### Opcionalmente gere dados falsos
 - php artisan db:seed --class=Fakers 
 
-### If you get this error: *No supported encrypter found*
+## Errors 
 
+#### *No supported encrypter found*
 run:
 ```
 php artisan key:generate
 ``` 
+
+#### Maximum function nesting level of '100' reached
+
+Isso acontece porque estás utilizando xdebug. Localize o arquivo php.ini do seu apache e adicione/altere a seguinte configuração:
+
+```
+xdebug.max_nesting_level=500
+``` 
+
 
 ### Virtual Host
 
@@ -86,7 +96,7 @@ php artisan key:generate
 - npm i -g gulp
 - gulp      (para compilar todos os javascript)
 - gulp watch     (para recompilar ao salvar os arquivos)
-- Faça as alterações e faça Pull Request
+- Faça as alterações e faça Pull Request para o master
 
 
 
