@@ -95,5 +95,7 @@ php artisan key:generate
 Implementar o sistema utilizando Vue-js e Materialize.
 
 - [x] Estrutura básica com (vue,vuex,router,resource)
-- [ ] Login consultando api
+- [x] Login consultando api
+- [ ] Menu responsivo e menu mobile
+  - [ ] Bug ao logar, o jquery não inicializa os menus 
 - [ ] Router com menu carregando os forms
