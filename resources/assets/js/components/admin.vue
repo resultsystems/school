@@ -11,36 +11,85 @@
     </div>
   </nav>
   <br/>
-  <div class="container ">
+  <div class="container">
     <div class="row">
-      <div class="col s2">
+      <div class="col l3 hide-on-med-and-down">
         <ul class="collapsible popout" data-collapsible="accordion">
           <li>
-            <div class="collapsible-header grey lighten-3">First</div>
+            <div class="collapsible-header grey lighten-3">Alunos</div>
             <div class="collapsible-body">
               <div class="collection">
-                <a href="#!" class="collection-item">Alvin</a>
-                <a href="#!" class="collection-item">Alvin</a>
-                <a href="#!" class="collection-item">Alvin</a>
-                <a href="#!" class="collection-item">Alvin</a>
+                <a href="#!" class="collection-item">Listar</a>
+                <a href="#!" class="collection-item">Cadastro</a>
               </div>
             </div>
           </li>
           <li>
-            <div class="collapsible-header grey lighten-3">Second</div>
+            <div class="collapsible-header grey lighten-3">Funcionários</div>
             <div class="collapsible-body">
-              <p>Lorem ipsum dolor sit amet.</p>
+              <div class="collection">
+                <a href="#!" class="collection-item">Listar</a>
+                <a href="#!" class="collection-item">Cadastro</a>
+              </div>
             </div>
           </li>
           <li>
-            <div class="collapsible-header grey lighten-3">Third</div>
+            <div class="collapsible-header grey lighten-3">Horários</div>
             <div class="collapsible-body">
-              <p>Lorem ipsum dolor sit amet.</p>
+              <div class="collection">
+                <a href="#!" class="collection-item">Listar</a>
+                <a href="#!" class="collection-item">Cadastro</a>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="collapsible-header grey lighten-3">Lições</div>
+            <div class="collapsible-body">
+              <div class="collection">
+                <a href="#!" class="collection-item">Listar</a>
+                <a href="#!" class="collection-item">Cadastro</a>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="collapsible-header grey lighten-3">Matérias</div>
+            <div class="collapsible-body">
+              <div class="collection">
+                <a href="#!" class="collection-item">Listar</a>
+                <a href="#!" class="collection-item">Cadastro</a>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="collapsible-header grey lighten-3">Pagamentos</div>
+            <div class="collapsible-body">
+              <div class="collection">
+                <a href="#!" class="collection-item">Listar</a>
+                <a href="#!" class="collection-item">Cadastro</a>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="collapsible-header grey lighten-3">Professores</div>
+            <div class="collapsible-body">
+              <div class="collection">
+                <a href="#!" class="collection-item">Listar</a>
+                <a href="#!" class="collection-item">Cadastro</a>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="collapsible-header grey lighten-3">Turmas</div>
+            <div class="collapsible-body">
+              <div class="collection">
+                <a href="#!" class="collection-item">Listar</a>
+                <a href="#!" class="collection-item">Cadastro</a>
+              </div>
             </div>
           </li>
         </ul>
       </div>
-      <div class="col s10">
+      <div class="col s12 l9">
         <router-view></router-view>
       </div>
 
