@@ -101,7 +101,6 @@ export default{
        var suspend = false;
        $("select").material_select();
        $('select').on('change', function() {
-         console.log(suspend)
          if (!suspend) {
             suspend = true;
           var event = new CustomEvent('change', {
@@ -120,7 +119,6 @@ export default{
                                       'password':this.password,
                                       'type':this.ownertype
                                   }
-                                  console.log(user);
             this.doLogin(user,(r)=>{
                 this.$data.loading=false;
             })

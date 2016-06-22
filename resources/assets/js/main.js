@@ -10,8 +10,6 @@ import {URI} from './config.js'
 Vue.use(VueRouter)
 Vue.use(VueResource)
 
-Vue.http.options.root = '/root';
-
 const router = new VueRouter({
     linkActiveClass: 'active',
 })

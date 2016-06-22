@@ -4,7 +4,9 @@ import {message} from '../../../functions.js'
 
 export function doLogin({dispatch}, user, handler) {
     this.$http.post(`${URI}/auth/login`,user).then((response) => {
-           let token = "loremipsum";
+      console.log(response)
+           let token = response.data.token;
+           user.password="";
            dispatch("LOGIN", user, token);
            handler(true);
       }, (response) => {
@@ -16,6 +18,5 @@ export function doLogin({dispatch}, user, handler) {
 }
 
 export function doLogout({dispatch}) {
-  //a fake logout
   dispatch("LOGOUT");
 }
