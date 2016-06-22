@@ -1,6 +1,7 @@
 <template>
   <nav>
     <div class="nav-wrapper">
+     <a href="#" data-activates="slide-out" class="button-collapse top-nav full hide-on-large-only"><i class="material-icons">menu</i></a></i></a>
       <a href="#" class="brand-logo"> &nbsp; Olá {{getLogin.user.username}}</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li v-link-active><a v-link="{path:'/home'}">Início</a></li>
@@ -8,8 +9,86 @@
         <li v-link-active><a v-link="{path:'/about'}">Sobre</a></li>
         <li class="teal lighten-1"><a @click="tryLogout">Logout</a></li>
       </ul>
+      <ul id="slide-out" class="side-nav">
+        <ul class="collapsible collapsible-accordion">
+
+          <li class="bold"><a v-link="{path:'/home'}" class="waves-effect waves-teal">Início</a></li>
+
+          <li class="bold"><a v-link="{path:'/profile'}" class="waves-effect waves-teal">Perfil</a></li>
+
+          <li class="bold"><a v-link="{path:'/about'}" class="waves-effect waves-teal">Sobre</a></li>
+
+          <li class="bold"><a @click="tryLogout" class="waves-effect waves-teal">Logout</a></li>
+
+            <li class="bold"><a class="collapsible-header  waves-effect waves-teal">Alunos</a>
+              <div class="collapsible-body">
+                <ul>
+                  <li><a href="color.html">Color</a></li>
+                  <li><a href="grid.html">Grid</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="bold"><a class="collapsible-header  waves-effect waves-teal">Funcionarios</a>
+              <div class="collapsible-body">
+                <ul>
+                  <li><a href="badges.html">Badges</a></li>
+                  <li><a href="buttons.html">Buttons</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="bold"><a class="collapsible-header active waves-effect waves-teal">Horários</a>
+              <div class="collapsible-body">
+                <ul>
+                  <li><a href="collapsible.html">Collapsible</a></li>
+                  <li><a href="dialogs.html">Dialogs</a></li>
+                </ul>
+              </div>
+            </li>
+             <li class="bold"><a class="collapsible-header active waves-effect waves-teal">Lições</a>
+              <div class="collapsible-body">
+                <ul>
+                  <li><a href="collapsible.html">Collapsible</a></li>
+                  <li><a href="dialogs.html">Dialogs</a></li>
+                </ul>
+              </div>
+            </li>
+             <li class="bold"><a class="collapsible-header active waves-effect waves-teal">Materias</a>
+              <div class="collapsible-body">
+                <ul>
+                  <li><a href="collapsible.html">Collapsible</a></li>
+                  <li><a href="dialogs.html">Dialogs</a></li>
+                </ul>
+              </div>
+            </li>
+             <li class="bold"><a class="collapsible-header active waves-effect waves-teal">Pagamentos</a>
+              <div class="collapsible-body">
+                <ul>
+                  <li><a href="collapsible.html">Collapsible</a></li>
+                  <li><a href="dialogs.html">Dialogs</a></li>
+                </ul>
+              </div>
+            </li>
+             <li class="bold"><a class="collapsible-header active waves-effect waves-teal">Professores</a>
+              <div class="collapsible-body">
+                <ul>
+                  <li><a href="collapsible.html">Collapsible</a></li>
+                  <li><a href="dialogs.html">Dialogs</a></li>
+                </ul>
+              </div>
+            </li>
+             <li class="bold"><a class="collapsible-header active waves-effect waves-teal">Turmas</a>
+              <div class="collapsible-body">
+                <ul>
+                  <li><a href="collapsible.html">Collapsible</a></li>
+                  <li><a href="dialogs.html">Dialogs</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+      </ul>
     </div>
   </nav>
+
   <br/>
   <div class="container">
     <div class="row">
@@ -120,6 +199,10 @@ export default {
         tryLogout() {
             this.doLogout();
         }
+    },
+    ready(){
+      $(".button-collapse").sideNav();
+      console.log('aa');
     }
 }
 </script>
