@@ -99,7 +99,6 @@ xdebug.max_nesting_level=500
 - Faça as alterações e faça Pull Request para o master
 
 
-
 ## Roadmap
 
 Implementar o sistema utilizando Vue-js e Materialize.
@@ -110,4 +109,15 @@ Implementar o sistema utilizando Vue-js e Materialize.
 - [ ] Menu responsivo e menu mobile
   - [ ] Bug ao logar, o jquery não inicializa os menus
   - [ ] Bug quando seleciona o item do menu mobile, a tela não volta para o estado atual
-- [ ] Router com menu carregando os forms
+- [x] Router com menu carregando os forms
+- [ ] Alunos
+  - [ ] Listar Alunos
+  - [ ] Cadastrar Aluno
+  - [ ] Editar Aluno
+- [ ] Funcionários
+- [ ] Horários
+- [ ] Lições
+- [ ] Matérias
+- [ ] Pagamentos
+- [ ] Professores
+- [ ] Turmas
