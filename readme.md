@@ -105,7 +105,7 @@ Implementar o sistema utilizando Vue-js e Materialize.
 
 - [x] Estrutura básica com (vue,vuex,router,resource)
 - [x] Login consultando api
-- [ ] Incluir opções para login automático: Funcionario, Professor e Aluno 
+- [x] Incluir opções para login automático: Funcionario, Professor e Aluno 
 - [ ] Menu responsivo e menu mobile
   - [ ] Bug ao logar, o jquery não inicializa os menus
   - [ ] Bug quando seleciona o item do menu mobile, a tela não volta para o estado atual

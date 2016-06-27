@@ -66,6 +66,12 @@
           </div>
         </div>
 
+        <div class="center-align">
+          <a @click.stop="logginAsEmployee" class="btn">Logar como Funcionário</a>
+          <a @click="logginAsTeacher" class="btn">Logar como Professor</a>
+          <a @click="logginAsStudent" class="btn">Logar como Aluno</a>
+        </div>
+
       </div>
     </div>
 
@@ -81,7 +87,7 @@ export default{
         return {
             username:'',
             password:'',
-            ownertype:'Teacher',
+            ownertype:'',
             loading:false
         }
     },
@@ -122,6 +128,21 @@ export default{
             this.doLogin(user,(r)=>{
                 this.$data.loading=false;
             })
+        },
+        logginAsEmployee(){
+          this.username='funcionario'
+          this.password='funcionario123'
+          this.ownertype='Employee'
+        },
+        logginAsStudent(){
+          this.username='aluno'
+          this.password='aluno123'
+          this.ownertype='Student'
+        },
+        logginAsTeacher(){
+          this.username='professor'
+          this.password='professor123'
+          this.ownertype='Teacher'
         }
     }
 }
