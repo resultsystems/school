@@ -1,10 +1,7 @@
 
-import {URI} from '../../../config.js'
-import {message} from '../../../functions.js'
-
 export function saveProfile({dispatch}, profile, handler) {
    this.$http.post(`${URI}/??/??`,profile).then((response) => {
-           dispatch("SET_PROFILE", profile);
+           dispatch("SAVE_PROFILE", profile);
            handler(true);
       }, (response) => {
         //melhorar isso ;)
@@ -13,7 +10,13 @@ export function saveProfile({dispatch}, profile, handler) {
       });
 }
 
-export function loadProfile({dispatch}, profile) {
-   dispatch("SET_PROFILE", profile);
+export function loadProfile({dispatch}) {
+
+  let mockProfile = {
+      name:"profileName",
+      email:"profileEmail"
+  }
+
+   dispatch("LOADPROFILE", mockProfile);
 }
 

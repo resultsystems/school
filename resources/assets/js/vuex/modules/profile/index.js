@@ -1,9 +1,12 @@
 const state = {
-  profile: null
+  name: "",
+  email:""
 }
 const mutations = {
-  SET_PROFILE (state, profile) {
-    state.profile = profile
+  LOADPROFILE (state, profile) {
+    state.name = profile.name;
+    state.email = profile.email;
   }
 }
 export default {state,mutations}
+
