@@ -111,6 +111,7 @@ Implementar o sistema utilizando Vue-js e Materialize.
   - [ ] Bug ao logar, o jquery não inicializa os menus
   - [ ] Bug quando seleciona o item do menu mobile, a tela não volta para o estado atual
 - [x] Router com menu carregando os forms
+- [ ] Perfil
 - [ ] Alunos
   - [ ] Listar Alunos
   - [ ] Cadastrar Aluno
