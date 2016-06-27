@@ -202,6 +202,7 @@ export default {
     },
     ready(){
       $(".button-collapse").sideNav();
+      $('.collapsible').collapsible({accordion : true });
     }
 }
 </script>
