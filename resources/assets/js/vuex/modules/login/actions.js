@@ -4,13 +4,11 @@ import {message} from '../../../functions.js'
 
 export function doLogin({dispatch}, user, handler) {
     this.$http.post(`${URI}/auth/login`,user).then((response) => {
-      console.log(response)
            let token = response.data.token;
            user.password="";
            dispatch("LOGIN", user, token);
            handler(true);
       }, (response) => {
-        console.log(response);
         //melhorar isso ;)
         message(`Error ${JSON.stringify(response.data)}`);
         handler(false);

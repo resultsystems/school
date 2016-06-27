@@ -202,7 +202,6 @@ export default {
     },
     ready(){
       $(".button-collapse").sideNav();
-      console.log('aa');
     }
 }
 </script>
