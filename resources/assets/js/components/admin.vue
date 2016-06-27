@@ -178,8 +178,8 @@
 </template>
 <script>
 
-import {getLogin} from '../vuex/modules/login/getters'
-import {doLogout} from '../vuex/modules/login/actions'
+import {getLogin} from '../vuex/modules/profile/getters'
+import {doLogout} from '../vuex/modules/profile/actions'
 
 export default {
     data(){

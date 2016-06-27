@@ -78,8 +78,8 @@
 
 </template>
 <script>
-import {doLogin} from '../vuex/modules/login/actions'
-import {getLogin,isLogged} from '../vuex/modules/login/getters'
+import {doLogin} from '../vuex/modules/profile/actions'
+import {getLogin,isLogged} from '../vuex/modules/profile/getters'
 import message from '../functions'
 
 export default{

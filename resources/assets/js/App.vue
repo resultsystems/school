@@ -7,7 +7,7 @@
 
 <script>
 import store from './vuex/store'
-import {isLogged,getLogin} from './vuex/modules/login/getters'
+import {isLogged,getLogin} from './vuex/modules/profile/getters'
 import Login from './components/login.vue'
 import Admin from './components/admin.vue'
 
