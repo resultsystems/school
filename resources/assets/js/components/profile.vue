@@ -13,10 +13,11 @@
         <div class="row valign-wrapper">
           <div class="col s10">
             <dl>
+
               <dt>Nome</dt>
-              <dd>Fulano de tal</dd>
+              <dd>{{getProfile.name}}</dd>
               <dt>Email</dt>
-              <dd>fulanodetal@gmail.com</dd>
+              <dd>{{getProfile.email}}</dd>
               <dt>Função</dt>
               <dd>Professor</dd>
             </dl>
@@ -32,8 +33,25 @@
 
 </template>
 <script>
+import {loadProfile} from '../vuex/modules/profile/actions'
+import {getProfile} from '../vuex/modules/profile/getters'
+
 export default{
-
-
+  vuex:{
+    actions:{
+      loadProfile
+    },
+    getters:{
+      getProfile
+    }
+  },
+  data(){
+    return{
+      profile: getProfile
+    }
+  },
+  ready(){
+    this.loadProfile();
+  }
 }
 </script>
