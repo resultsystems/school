@@ -1,3 +1,4 @@
+# Pacote abandonado, use para estudo se for o caso, antes de solicitar ajuda para instalação assista os vídeos sobre para você entender o objetivo do pacote
 
 # Sistema para gerenciamento de escola
 
