@@ -1,6 +1,8 @@
 # Pacote abandonado, use para estudo se for o caso, antes de solicitar ajuda para instalação assista os vídeos sobre para você entender o objetivo do pacote
 
-# Sistema para gerenciamento de escola
+## Recomendo: https://github.com/emtudo/school-api
+
+## Sistema para gerenciamento de escola
 
 [Vídeo com template](https://www.youtube.com/watch?v=Z11WPs8AJvY)
 
